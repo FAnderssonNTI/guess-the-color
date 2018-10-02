@@ -1,5 +1,6 @@
 import random
 
+# ascii art from http://ascii.co.uk/art/cards
 clubs = """\
  _________ 
 |A        |
