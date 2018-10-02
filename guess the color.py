@@ -96,21 +96,23 @@ while menu != 2:
 	if (menu == 1 and (balance - 50) >= 0):
 		balance = balance - 50
 		color = random.randint(1, 4)
-		print("THE MACHINE HAS RANDOMED A COLOR\n" + "PRESS 1 IF YOU THINK THE COLOR IS CLUBS\n" + "PRESS 2 IF YOU THINK THE COLOR IS DIAMONDS\n" + "PRESS 3 IF YOU THINK THE COLOR IS HEARTS\n" + "PRESS 4 IF YOU THINK THE COLOR IS SPADES\n")
+		print("THE MACHINE HAS RANDOMED A COLOR\n", "PRESS 1 IF YOU THINK THE COLOR IS CLUBS\n", "PRESS 2 IF YOU THINK THE COLOR IS DIAMONDS\n", "PRESS 3 IF YOU THINK THE COLOR IS HEARTS\n", "PRESS 4 IF YOU THINK THE COLOR IS SPADES\n")
 		choosenColor = int(input())
 		if choosenColor == color:
 			print("CONGRATULATIONS\n" + "YOU HAVE CHOOSEN THE RIGHT CARD")
-			balance = balance + 100
+			balance = balance + 150
 		else:
 			if color == 1:
-				print(clubs, "\nWRONG COLOR" + "\nTHE CORRECT COLOR WAS CLUBS")
+				print(clubsSymbol, "\nWRONG COLOR", "\nTHE CORRECT COLOR WAS CLUBS")
 			elif color == 2:
-				print(diamonds, "\nWRONG COLOR" + "\nTHE CORRECT COLOR WAS DIAMONDS")
+				print(diamondsSymbol, "\nWRONG COLOR", "\nTHE CORRECT COLOR WAS DIAMONDS")
 			elif color == 3:
-				print(hearts, "\nWRONG COLOR" + "\nTHE CORRECT COLOR WAS HEARTS")
+				print(heartsSymbol, "\nWRONG COLOR", "\nTHE CORRECT COLOR WAS HEARTS")
 			elif color == 4:
-				print(spades, "\nWRONG COLOR" + "\nTHE CORRECT COLOR WAS SPADES")
-	if (menu == 1 and (balance - 50) < 0):
+				print(spadesSymbol, "\nWRONG COLOR", "\nTHE CORRECT COLOR WAS SPADES")
+	elif (menu == 1 and (balance - 50) < 0):
 		print("YOU DON'T HAVE ENOUGH MONEY")
-	elif menu == 2:
-		print("YOUR MONEY WILL NOW BE PAYED OUT TO YOUR ACCOUNT\n" + "GOODBYE")
+	elif (menu == 2 and balance > 0):
+		print("YOUR MONEY WILL NOW BE PAYED OUT TO YOUR ACCOUNT\n", "YOU NOW HAVE ", balance, " IN YOUR ACCOUNT\n", "GOODBYE")
+	elif (menu == 2 and balance == 0):
+		print("HAHA YOU'RE BROKE")
